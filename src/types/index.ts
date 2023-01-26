@@ -22,3 +22,36 @@ export interface ThingsInLife {
 //   colorOfPen: Color;
 //   keyboardArrow: Direction;
 // };
+
+export interface MyInterface<GenericValue> {
+  value: GenericValue;
+}
+
+export interface MyInterface<GenericValue = string> {
+  value: GenericValue;
+}
+
+export type User = {
+  email: string;
+  name: string;
+};
+
+export enum Status {
+  Initiated = "Initiated",
+  Pending = "Pending",
+  Shipped = "Shipped",
+  Delivered = "Delivered",
+}
+
+export interface Order {
+  buyer: string;
+  orderStatus: Status;
+}
+
+// 클래스에 속성해 있어야 할 주요 함수들을 인터페으스로 정의
+export interface IStack<T> {
+  push(item: T): void;
+  pop(): T | undefined;
+  peek(): T | undefined;
+  size(): number;
+}
